@@ -2,7 +2,9 @@
 
 采用交互的方式帮你生成规范的提交消息
 
-[![asciicast](https://asciinema.org/a/dQ0GuGqloFgR9JF87ZVfj3mht.svg)](https://asciinema.org/a/dQ0GuGqloFgR9JF87ZVfj3mht)
+<p align="center">
+  <img width="600" src="docs/commit.svg">
+</p>
 
 ## commit message 格式如下
 

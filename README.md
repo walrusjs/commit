@@ -2,6 +2,8 @@
 
 采用交互的方式帮你生成规范的提交消息
 
+[![asciicast](https://asciinema.org/a/dQ0GuGqloFgR9JF87ZVfj3mht.svg)](https://asciinema.org/a/dQ0GuGqloFgR9JF87ZVfj3mht)
+
 ## commit message 格式如下
 
 ```

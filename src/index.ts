@@ -1,5 +1,6 @@
 import execa from 'execa';
 import inquirer from 'inquirer';
+import chalk from 'chalk';
 import { Commit, CommitConfig } from './types';
 import { getErrorAndLog, isStageEmpty, getCommitMessage } from './utils';
 
@@ -7,9 +8,8 @@ const { printErrorAndExit, logStep } = getErrorAndLog(`commit`);
 export { printErrorAndExit, logStep }
 
 export async function commit(config: CommitConfig = {}) {
-  console.log(config);
-  const { 
-    types: commitTypes = [], 
+  const {
+    types: commitTypes = [],
     skipPush,
     skipCommit
   } = config;
@@ -21,8 +21,6 @@ export async function commit(config: CommitConfig = {}) {
       value
     };
   });
-
-  console.log(types);
 
   // 未修改任何文件
   const gitStatus = execa.sync('git', ['status', '--porcelain']).stdout;
@@ -39,24 +37,24 @@ export async function commit(config: CommitConfig = {}) {
   const reult: Commit = await inquirer.prompt([
     {
       name: 'type',
-      message: '请选择提交的类型:',
+      message: '请选择您本次提交的修改类型:',
       type: 'list',
       choices: types,
       validate: (value: string) => {
         if (value) {
           return true;
         }
-        return '提交类型不能为空';
+        return '修改类型不能为空';
       }
     },
     {
       name: 'scope',
-      message: '请输入提交的范围(可选):',
+      message: '请明确本次提交的改动范围(可选):',
       type: 'input'
     },
     {
       name: 'subject',
-      message: '请输入提交的描述:',
+      message: '简短描述本次改动:',
       type: 'input',
       validate: (value: string) => {
         if (value) {
@@ -67,21 +65,30 @@ export async function commit(config: CommitConfig = {}) {
     },
     {
       name: 'body',
-      message: '请输入提交的详细内容(可选):',
+      message: `详细描述本次改动, 使用 '|' 换行. (可选):`,
       type: 'input'
     },
     {
       name: 'footer',
-      message: '请输入提交的页脚(可选):',
+      message: `请输入提交的页脚, 使用 '|' 换行.(可选):`,
       type: 'input'
     }
   ]);
 
   const message = getCommitMessage(reult);
 
-  logStep(`提交信息`);
-
+  console.log(chalk.green(`本次提交的信息为:`));
   console.log(message);
+
+  const { confirmCommit } = await inquirer.prompt([
+    {
+      name: 'confirmCommit',
+      message: `确认提交本次改动?`,
+      type: 'confirm'
+    }
+  ]);
+
+  if (!confirmCommit) return;
 
   if (!skipCommit) {
     logStep(`提交代码`);
@@ -90,11 +97,11 @@ export async function commit(config: CommitConfig = {}) {
     await execa.sync('git', ['commit', '--message', `${message}`]);
   }
 
-  
+
   if (!skipPush && !skipCommit) {
     logStep(`提交代码到远端`);
 
     // 提交代码到远端
     await execa.sync('git', ['push']);
-  }  
+  }
 }

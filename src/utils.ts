@@ -20,7 +20,7 @@ export function getErrorAndLog(prefix: string) {
 
 /**
  * 判断是否存在暂存文件
- * @returns 
+ * @returns
  */
 export function isStageEmpty() {
   return execa.sync('git', ['diff', '--cached']).stdout === '';
@@ -47,14 +47,14 @@ export const getCommitMessage = (info: Commit) => {
   }
 
   if (info.body) {
-    const bodys = info.body.split('\\n');
+    const bodys = info.body.split('|');
 
     const bodyMessage = bodys.reduce((prev, curr, index) => {
       let msg = prev;
       if (index === 0) {
-        msg += `\n\n${curr}`;
+        msg += `\n\n${curr.trim()}`;
       } else {
-        msg += `\n${curr}`;
+        msg += `\n${curr.trim()}`;
       }
       return msg;
     }, '');
@@ -63,14 +63,14 @@ export const getCommitMessage = (info: Commit) => {
   }
 
   if (info.footer) {
-    const footers = info.footer.split('\\n');
+    const footers = info.footer.split('|');
 
     const footerMessage = footers.reduce((prev, curr, index) => {
       let msg = prev;
       if (index === 0) {
-        msg += `\n\n${curr}`;
+        msg += `\n\n${curr.trim()}`;
       } else {
-        msg += `\n${curr}`;
+        msg += `\n${curr.trim()}`;
       }
       return msg;
     }, '');

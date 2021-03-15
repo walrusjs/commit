@@ -14,7 +14,7 @@
   ],
   "scripts": {
     "build": "rimraf lib && tsc -p tsconfig.build.json",
-    "commit": "node ./lib/cli.js --skip-commit",
+    "commit": "node ./lib/cli.js",
     "release": "walrus release"
   },
   "dependencies": {

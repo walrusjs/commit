@@ -24,7 +24,6 @@ cli
     }
   )
   .action((entries: string[], opts: any) => {
-    console.log(opts);
     const {
       data = {}
     } = configLoader.loadSync({
@@ -39,7 +38,7 @@ cli
     }
 
     if (
-      !Array.isArray(config.types) || 
+      !Array.isArray(config.types) ||
       config.types.length === 0
     ) {
       config.types = DEFAULT_TYPES;
@@ -47,11 +46,11 @@ cli
 
     commit(config)
       .then(() => {
-        logStep(`提交成功`);
+        logStep(`操作成功`);
         process.exit(0);
       })
       .catch(() => {
-        logStep(`提交失败`);
+        logStep(`操作失败`);
         process.exit(1);
       });
   })

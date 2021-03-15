@@ -70,7 +70,7 @@ export async function commit(config: CommitConfig = {}) {
     },
     {
       name: 'footer',
-      message: `请输入提交的页脚, 使用 '|' 换行.(可选):`,
+      message: `请输入提交的页脚, 使用 '|' 换行. (可选):`,
       type: 'input'
     }
   ]);

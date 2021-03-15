@@ -3,7 +3,7 @@
 采用交互的方式帮你生成规范的提交消息
 
 <p align="center">
-  <img width="600" src="docs/commit.svg">
+  <img width="600" src="https://cdn.jsdelivr.net/gh/walrusjs/commit@main/docs/commit.svg">
 </p>
 
 ## commit message 格式如下

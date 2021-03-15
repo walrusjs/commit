@@ -18,7 +18,7 @@
     "release": "walrus release"
   },
   "dependencies": {
-    "@walrus/build-utils": "^0.5.0",
+    "@walrus/cli-utils": "^1.0.1",
     "cac": "^6.7.2",
     "chalk": "^4.1.0",
     "execa": "^5.0.0",

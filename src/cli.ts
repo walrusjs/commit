@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { cac } from 'cac';
-import { configLoader } from '@walrus/build-utils';
+import { joycon } from '@walrus/cli-utils';
 import { commit, logStep } from './';
 import { CommitConfig } from './types';
 import { DEFAULT_CONFIG_FILES, DEFAULT_TYPES } from './config';
@@ -26,7 +26,7 @@ cli
   .action((entries: string[], opts: any) => {
     const {
       data = {}
-    } = configLoader.loadSync({
+    } = joycon.loadSync({
       files: DEFAULT_CONFIG_FILES,
       cwd: process.cwd(),
       packageKey: 'commit'

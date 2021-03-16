@@ -8,6 +8,45 @@
 
 本 demo 使用 [svg-term-cli](https://github.com/marionebl/svg-term-cli) 生成。
 
+## 📦 安装
+
+- npm 安装
+
+```bash
+npm install @walrus/commit --dev --save
+```
+
+- yarn 安装
+
+```bash
+yarn add @walrus/commit --dev
+```
+
+## 🔨 使用
+
+```sh
+npx commit
+```
+
+本工具支持使用配置文件修改配置，优先级：
+
+- commit.config.ts
+- commit.config.js
+- .commitrc.ts
+- .commitrc.js
+
+目前支持如下配置
+
+- types 
+  - 描述：修改类型配置
+  - 类型：`{ name: string; emoji?: string; description: string }[]`
+- skipCommit
+  - 描述：跳过commit
+  - 类型：`boolean`
+- skipPush
+  - 描述：跳过push
+  - 类型：`boolean`
+
 ## 内置的修改类型
 
 - 💥 feat: 新功能

@@ -1,6 +1,4 @@
-import execa from 'execa';
-import inquirer from 'inquirer';
-import chalk from 'chalk';
+import { execa, inquirer, chalk } from '@walrus/cli-utils';
 import { Commit, CommitConfig } from './types';
 import { getErrorAndLog, isStageEmpty, getCommitMessage } from './utils';
 

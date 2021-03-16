@@ -1,6 +1,5 @@
 #!/usr/bin/env node
-import { cac } from 'cac';
-import { joycon } from '@walrus/cli-utils';
+import { cac, joycon } from '@walrus/cli-utils';
 import { commit, logStep } from './';
 import { CommitConfig } from './types';
 import { DEFAULT_CONFIG_FILES, DEFAULT_TYPES } from './config';

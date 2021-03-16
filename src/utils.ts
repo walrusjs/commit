@@ -1,6 +1,5 @@
-import chalk from 'chalk';
 import { Commit } from './types';
-import execa from 'execa';
+import { execa, chalk } from '@walrus/cli-utils';
 
 export function getErrorAndLog(prefix: string) {
   function logStep(name: string) {

@@ -121,5 +121,6 @@ Close #100
 - [git-commit-emoji-cn](https://github.com/liuchengxu/git-commit-emoji-cn)
 - [commitlint](https://github.com/conventional-changelog/commitlint)
 - [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
+- [cz-emoji](https://github.com/ngryman/cz-emoji)
 - [svg-term-cli](https://github.com/marionebl/svg-term-cli)
 - [asciinema](https://github.com/asciinema/asciinema)

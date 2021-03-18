@@ -32,6 +32,11 @@ export const DEFAULT_TYPES = [
     "name": "ui"
   },
   {
+    "emoji": "🍱",
+    "description": "修改静态资源",
+    "name": "assets"
+  },
+  {
     "emoji": "📖",
     "description": "文档相关",
     "name": "docs"
@@ -80,6 +85,27 @@ export const DEFAULT_TYPES = [
     "emoji": "🐎",
     "description": "性能优化",
     "name": "perf"
+  },
+  {
+    "emoji": "🙈",
+    "description": "添加或更新忽略配置文件",
+    "name": "ignore"
+  },
+  {
+    "emoji": "💩",
+    "description": "编写需要改变的错误代码",
+    "name": "poo"
+  },
+  {
+    "emoji": "🚸",
+    "code": ":children_crossing:",
+    "description": "改善用户体验",
+    "name": "ux"
+  },
+  {
+    "emoji": "📱",
+    "description": "响应式相关",
+    "name": "iphone"
   },
   {
     "emoji": "🚀",
